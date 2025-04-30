@@ -14,6 +14,6 @@ namespace E.DAL
         {
         }
 
-        public DbSet<PersonaE> PersonaEs { get; set; }
+        public DbSet<PersonaE> PersonaE { get; set; }
     }
 }

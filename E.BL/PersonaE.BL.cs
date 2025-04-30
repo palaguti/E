@@ -10,10 +10,41 @@ namespace E.BL
 {
     public class PersonaEBL
     {
-        readonly PersonaEDAL personaEDAL;
+        private readonly PersonaEDAL _personaEDAL;
 
-        private class PersonaEDAL
+        public PersonaEBL(PersonaEDAL personaEDAL)
         {
+            _personaEDAL = personaEDAL;
+        }
+
+        public async Task<int> CrearAsync(PersonaE pPersonaE)
+        {
+            return await _personaEDAL.CrearAsync(pPersonaE);
+        }
+
+        public async Task<int> ModificarAsync(PersonaE pPersonaE)
+        {
+            return await _personaEDAL.ModificarAsync(pPersonaE);
+        }
+
+        public async Task<int> EliminarAsync(PersonaE pPersonaE)
+        {
+            return await _personaEDAL.EliminarAsync(pPersonaE);
+        }
+
+        public async Task<PersonaE> ObtenerPorIdAsync(PersonaE pPersonaE)
+        {
+            return await _personaEDAL.ObtenerPorIdAsync(pPersonaE);
+        }
+
+        public async Task<List<PersonaE>> ObtenerTodosAsync()
+        {
+            return await _personaEDAL.ObtenerTodosAsync();
+        }
+
+        public async Task<List<PersonaE>> BuscarAsync(PersonaE pPersonaE)
+        {
+            return await _personaEDAL.BuscarAsync(pPersonaE);
         }
     }
 

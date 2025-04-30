@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\E.Controller.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Controllers\E.Controller.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
   </ItemGroup>
 

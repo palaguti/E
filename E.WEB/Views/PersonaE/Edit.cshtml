@@ -1,0 +1,34 @@
+﻿@model E.EN.PersonaE
+
+@{
+    ViewData["Title"] = "Editar Persona";
+}
+
+<h2>Editar Persona</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="NombreE"></label>
+        <input asp-for="NombreE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ApellidoE"></label>
+        <input asp-for="ApellidoE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="FechaNacimientoE"></label>
+        <input asp-for="FechaNacimientoE" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SueldoE"></label>
+        <input asp-for="SueldoE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EstatusE"></label>
+        <input asp-for="EstatusE" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Guardar cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+</form>
+

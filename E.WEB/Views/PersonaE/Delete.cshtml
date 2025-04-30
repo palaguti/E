@@ -1,0 +1,36 @@
+﻿@model E.EN.PersonaE
+
+@{
+    ViewData["Title"] = "Eliminar Persona";
+}
+
+<h2>¿Estás seguro de que deseas eliminar esta persona?</h2>
+
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.NombreE</dd>
+
+        <dt class="col-sm-2">Apellido</dt>
+        <dd class="col-sm-10">@Model.ApellidoE</dd>
+
+        <dt class="col-sm-2">Fecha Nacimiento</dt>
+        <dd class="col-sm-10">@Model.FechaNacimientoE.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Sueldo</dt>
+        <dd class="col-sm-10">@Model.SueldoE</dd>
+
+        <dt class="col-sm-2">Estatus</dt>
+        <dd class="col-sm-10">@Model.EstatusE</dd>
+
+    </dl>
+
+    <form asp-action="DeletePersona" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+

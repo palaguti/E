@@ -1,0 +1,40 @@
+﻿@model List<E.EN.PersonaE>
+
+@{
+    ViewData["Title"] = "Listado de Personas";
+}
+
+<h1 class="text-center">Listado de Personas</h1>
+
+<div class="mb-3 text-end">
+    <a class="btn btn-primary" asp-action="Create">Agregar Persona</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Sueldo</th>
+            <th>Estatus</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var persona in Model)
+        {
+            <tr>
+                <td>@persona.NombreE</td>
+                <td>@persona.ApellidoE</td>
+                <td>@persona.FechaNacimientoE.ToString("yyyy-MM-dd")</td>
+                <td>@persona.SueldoE.ToString("C")</td>
+                <td>@persona.EstatusE</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@persona.Id">Editar</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@persona.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

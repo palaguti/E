@@ -3,10 +3,6 @@ using E.DAL;
 using E.BL;
 System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.InvariantCulture; var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
-var app = builder.Build();
 
 // Configuración del DbContext para la entidad Persona
 builder.Services.AddDbContext<EDBContext>(options =>
@@ -16,9 +12,13 @@ builder.Services.AddDbContext<EDBContext>(options =>
 });
 
 // Inyección de dependencias para la capa DAL y BL
-builder.Services.AddScoped<Persona>();
+builder.Services.AddScoped<PersonaEDAL>();
 builder.Services.AddScoped<PersonaEBL>();
 
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

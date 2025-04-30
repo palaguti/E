@@ -1,0 +1,35 @@
+﻿@model E.EN.PersonaE
+
+@{
+    ViewData["Title"] = "Crear Persona";
+}
+
+<h2>Crear Persona</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="NombreE" class="control-label"></label>
+        <input asp-for="NombreE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ApellidoE" class="control-label"></label>
+        <input asp-for="ApellidoE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="FechaNacimientoE" class="control-label"></label>
+        <input asp-for="FechaNacimientoE" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SueldoE" class="control-label"></label>
+        <input asp-for="SueldoE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EstatusE" class="control-label"></label>
+        <input asp-for="EstatusE" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Crear" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>

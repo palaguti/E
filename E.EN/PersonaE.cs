@@ -30,10 +30,8 @@ namespace E.EN
         public decimal SueldoE { get; set; }
 
         [Required(ErrorMessage = "El estatus es obligatorio.")]
-        [StringLength(50, ErrorMessage = "El estatus no puede tener más de 50 caracteres.")]
-        public string EstatusE { get; set; }
+   
+        public byte EstatusE { get; set; }
 
-        [StringLength(500, ErrorMessage = "El comentario no puede tener más de 500 caracteres.")]
-        public string? ComentarioE { get; set; }
     }
 }
